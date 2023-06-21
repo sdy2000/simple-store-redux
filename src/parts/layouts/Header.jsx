@@ -12,7 +12,7 @@ const navData = [
 ];
 
 const Header = () => {
-  const { amount } = useSelector((store) => store.product);
+  const { total_amount } = useSelector((store) => store.cart);
 
   return (
     <header>
@@ -45,8 +45,8 @@ const Header = () => {
             </div>
             <Link to="/#" className="relative head-icon-btn">
               <MdOutlineLocalGroceryStore size={30} />
-              <span className="absolute top-0 left-0 w-5 h-5 text-sm font-semibold bg-primary-600 text-white rounded-full flex justify-center items-center">
-                {amount}
+              <span className="absolute -top-2 -left-1 w-5 h-5 text-sm font-semibold bg-primary-600 text-white rounded-full flex justify-center items-center">
+                {total_amount}
               </span>
             </Link>
             <button type="button" className="lg:hidden head-icon-btn">
