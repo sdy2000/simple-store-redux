@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { getProduct } from "../context/features/product/getProduct";
+import { getAllProduct } from "../context/features/product/getProduct";
 import { ProductList } from "../parts";
 import { useEffect } from "react";
 
@@ -7,7 +7,7 @@ const ProductPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProduct());
+    dispatch(getAllProduct());
   }, [dispatch]);
 
   return (
