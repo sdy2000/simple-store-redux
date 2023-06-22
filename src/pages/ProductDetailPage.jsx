@@ -16,6 +16,10 @@ const ProductDetailPage = () => {
       dispatch(clearProduct());
     };
   }, [dispatch]);
-  return <ProductDetails />;
+  return (
+    <div className="mb-20">
+      <ProductDetails />
+    </div>
+  );
 };
 export default ProductDetailPage;

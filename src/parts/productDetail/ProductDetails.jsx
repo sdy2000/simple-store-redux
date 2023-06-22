@@ -4,7 +4,7 @@ const ProductDetails = () => {
   const { product, isLoading } = useSelector((store) => store.product);
 
   return (
-    <div className="pt-28 mx-auto px-16">
+    <div className="container pt-28 mx-auto px-16 ">
       {isLoading ? (
         <div className="text-3xl font-bold text-center py-20">...Loading</div>
       ) : (
