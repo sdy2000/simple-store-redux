@@ -15,6 +15,18 @@
     @apply font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none duration-300;
   }
 
+  /*--------------- Input ----------------*/
+  /*------- Accounting -------*/
+  .accounting-input-div {
+    @apply flex justify-between items-center bg-gray-300 rounded-xl shadow-lg border focus:outline-4 hover:border-primary-700 overflow-hidden duration-300;
+  }
+  .accounting-input-div input {
+    @apply bg-gray-300 h-14 py-1 px-4 w-full placeholder-gray-600 outline-none;
+  }
+  .accounting-input-div svg {
+    @apply hover:scale-110 cursor-pointer duration-300 pr-3;
+  }
+
   /*============================ Header ============================*/
   /*--------------- Nav List  ----------------*/
   .head-nav-list {
