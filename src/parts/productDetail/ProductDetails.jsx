@@ -1,7 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../context/features/cart/cart-slice";
 
 const ProductDetails = () => {
   const { product, isLoading } = useSelector((store) => store.product);
+  const dispatch = useDispatch();
 
   return (
     <div className="container pt-28 mx-auto px-16 ">
@@ -28,7 +30,10 @@ const ProductDetails = () => {
               <p className="text-gray-700 text-lg flex-wrap">
                 {product.description}
               </p>
-              <button className="bg-red-500 rounded-sm text-white font-bold text-xl px-8 py-2 hover:scale-105 hover:bg-red-600 duration-500">
+              <button
+                onClick={() => dispatch(addToCart(product))}
+                className="bg-red-500 rounded-sm text-white font-bold text-xl px-8 py-2 hover:scale-105 hover:bg-red-600 duration-500"
+              >
                 Add to Cart
               </button>
             </div>

@@ -43,7 +43,7 @@ const Header = () => {
                 Get started
               </Link>
             </div>
-            <Link to="/#" className="relative head-icon-btn">
+            <Link to="/cart" className="relative head-icon-btn">
               <MdOutlineLocalGroceryStore size={30} />
               <span className="absolute -top-2 -left-1 w-5 h-5 text-sm font-semibold bg-primary-600 text-white rounded-full flex justify-center items-center">
                 {total_amount}

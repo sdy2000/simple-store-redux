@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   About,
+  CartPage,
   Contact,
   HomeLayout,
   HomePage,
@@ -19,6 +20,7 @@ function App() {
             <Route path="/product/:slug" element={<ProductDetailPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<CartPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
