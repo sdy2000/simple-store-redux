@@ -19,6 +19,9 @@ const cartSlice = createSlice({
         cartItem.amount = cartItem.amount + 1;
       }
     },
+    clearCart: (state) => {
+      state.cartItems = [];
+    },
     removeItem: (state, { payload }) => {
       state.cartItems = state.cartItems.filter((item) => item.id !== payload);
     },
@@ -44,7 +47,13 @@ const cartSlice = createSlice({
   extraReducers: (builder) => {},
 });
 
-export const { addToCart, removeItem, increase, decrease, calculateTotals } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  clearCart,
+  removeItem,
+  increase,
+  decrease,
+  calculateTotals,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
