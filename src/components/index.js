@@ -7,3 +7,6 @@ export { default as HomeSlider } from "./sliders/HomeSlider";
 
 // / // / // / // Modals // / // / // / //
 export { default as AlertModal } from "./modals/AlertModal";
+
+// / // / // / // Box // / // / // / //
+export { default as SocialBox } from "./box/SocialBox";

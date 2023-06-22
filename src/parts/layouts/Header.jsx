@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { BsListUl } from "react-icons/bs";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { openModal } from "../../context/features/modal/modal-slice";
+import { HeaderHiddenBar } from "..";
 
 const navData = [
   { id: "Home", slug: "/", title: "Home Page" },
@@ -13,6 +15,8 @@ const navData = [
 
 const Header = () => {
   const { total_amount } = useSelector((store) => store.cart);
+  const { isOpen, modalId } = useSelector((store) => store.modal);
+  const dispatch = useDispatch();
 
   return (
     <header>
@@ -49,7 +53,11 @@ const Header = () => {
                 {total_amount}
               </span>
             </Link>
-            <button type="button" className="lg:hidden head-icon-btn">
+            <button
+              onClick={() => dispatch(openModal("header_hidden_bar"))}
+              type="button"
+              className="lg:hidden head-icon-btn"
+            >
               <span className="sr-only">Open main menu</span>
               <BsListUl size={30} />
             </button>
@@ -70,6 +78,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      {isOpen && modalId === "header_hidden_bar" && <HeaderHiddenBar />}
     </header>
   );
 };

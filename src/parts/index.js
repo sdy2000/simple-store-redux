@@ -1,5 +1,6 @@
 // / // / // / // Layouts // / // / // / //
 export { default as Header } from "./layouts/Header";
+export { default as HeaderHiddenBar } from "./layouts/HeaderHiddenBar";
 export { default as Footer } from "./layouts/Footer";
 
 // / // / // / // Product // / // / // / //

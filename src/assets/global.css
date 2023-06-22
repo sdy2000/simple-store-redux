@@ -24,3 +24,7 @@
     @apply block py-2 text-gray-100 border-b border-gray-100 hover:bg-gray-50 hover:bg-transparent lg:border-0 hover:text-primary-700 duration-300;
   }
 }
+
+.hidden-nav {
+  transition: 700ms cubic-bezier(1, 0, 0.3, 0.7);
+}

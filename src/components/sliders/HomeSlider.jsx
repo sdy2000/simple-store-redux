@@ -17,7 +17,7 @@ const HomeSlider = ({ title, products }) => {
       <h3 className="text-xl font-bold self-start">{title}</h3>
       <div className="mt-8 w-full">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={1}
           spaceBetween={30}
           autoplay={{
             delay: 2500,
@@ -25,6 +25,20 @@ const HomeSlider = ({ title, products }) => {
           }}
           pagination={{
             clickable: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
           }}
           navigation={true}
           modules={[Autoplay, Pagination, Navigation]}

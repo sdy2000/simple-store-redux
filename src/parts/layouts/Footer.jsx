@@ -1,11 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
+import { SocialBox } from "../../components";
 
 const footerButtonData = [
   { title: "Terms & Conditions", slug: "/term" },
@@ -45,72 +39,7 @@ const Footer = () => {
               <li>Weekend: 10am - 3pm</li>
             </ul>
 
-            <ul className="mt-8 flex gap-6">
-              <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-gray-300 transition hover:opacity-75 text-2xl duration-300"
-                >
-                  <span className="sr-only">Facebook</span>
-
-                  <BsFacebook />
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-gray-300 transition hover:opacity-75 text-2xl duration-300"
-                >
-                  <span className="sr-only">Instagram</span>
-
-                  <BsInstagram />
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-gray-300 transition hover:opacity-75 text-2xl duration-300"
-                >
-                  <span className="sr-only">Twitter</span>
-
-                  <BsTwitter />
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-gray-300 transition hover:opacity-75 text-2xl duration-300"
-                >
-                  <span className="sr-only">GitHub</span>
-
-                  <BsGithub />
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-gray-300 transition hover:opacity-75 text-2xl duration-300"
-                >
-                  <span className="sr-only">Dribbble</span>
-
-                  <BsDribbble />
-                </a>
-              </li>
-            </ul>
+            <SocialBox />
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
