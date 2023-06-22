@@ -56,6 +56,7 @@ const HeaderHiddenBar = () => {
                 <li
                   key={nav.slug}
                   className="text-lg font-semibold text-gray-800"
+                  onClick={() => dispatch(closeModal("header_hidden_bar"))}
                 >
                   <Link to={nav.slug} title={nav.title}>
                     {nav.title}
