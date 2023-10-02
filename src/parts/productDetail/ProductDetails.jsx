@@ -5,7 +5,6 @@ const ProductDetails = () => {
   const { product, isLoading } = useSelector((store) => store.product);
   const dispatch = useDispatch();
 
-  console.log(product);
   return (
     <div className="container pt-28 mx-auto px-16 ">
       {isLoading ? (
