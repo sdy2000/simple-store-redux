@@ -21,6 +21,7 @@ const Header = () => {
 
   return (
     <>
+      <div className="w-full flex justify-between items-center py-3 bg-stone-800"></div>
       <header>
         <nav className="bg-gray-800 border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="container flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">

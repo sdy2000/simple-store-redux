@@ -1,6 +1,3 @@
-// / // / // / // Layouts // / // / // / //
-export { default as HomeLayout } from "./layouts/HomeLayout";
-
 // / // / // / // Accounting // / // / // / //
 export { default as Login } from "./accounting/Login";
 export { default as SingUp } from "./accounting/SingUp";

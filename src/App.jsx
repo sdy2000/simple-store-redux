@@ -4,11 +4,11 @@ import {
   CartPage,
   Category,
   Contact,
-  HomeLayout,
   HomePage,
   ProductDetailPage,
   ProductPage,
 } from "./pages";
+import { HomeLayout } from "./layouts";
 
 function App() {
   return (
@@ -24,6 +24,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<CartPage />} />
           </Route>
+          {/* <Route element={}>
+
+          </Route> */}
         </Routes>
       </BrowserRouter>
     </>
