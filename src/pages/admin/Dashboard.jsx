@@ -2,6 +2,7 @@ import { getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { productRef } from "../../services";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 function Dashboard() {
   const [data, setData] = useState(null);
@@ -26,7 +27,26 @@ function Dashboard() {
     });
   }, []);
 
-  console.log(data);
+  const renderStars = (rating) => {
+    const maxStars = 5;
+    const filledStars = Math.round((rating.rate / maxStars) * 5);
+    const emptyStars = maxStars - filledStars;
+
+    return (
+      <div className="flex justify-center items-center gap-3">
+        <span className="flex">
+          {Array.from({ length: filledStars }, (_, index) => (
+            <AiFillStar key={index} className="text-yellow-400" />
+          ))}
+          {Array.from({ length: emptyStars }, (_, index) => (
+            <AiOutlineStar key={index} className="text-gray-300" />
+          ))}
+        </span>
+        <span>{rating.count}</span>
+      </div>
+    );
+  };
+
   return (
     <div className="container py-20 flex flex-col gap-4 justify-start">
       <Link
@@ -52,6 +72,9 @@ function Dashboard() {
               <th scope="col" className="px-6 py-3">
                 Price
               </th>
+              <th scope="col" className="px-6 py-3">
+                Rate
+              </th>
               <th
                 scope="col"
                 className="px-6 py-3 flex justify-center items-center"
@@ -63,25 +86,24 @@ function Dashboard() {
           <tbody>
             {data?.map((pro, idx) => (
               <tr className="bg-white border-b hover:bg-gray-50" key={idx}>
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
-                >
-                  <img
-                    className="w-16 h-16 rounded-full object-contain"
-                    src={pro.image}
-                    alt={pro.title}
-                  />
-                </th>
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
-                >
-                  {pro.title}
-                </th>
-                <td className="px-6 py-4">{pro.category}</td>
-                <td className="px-6 py-4">{pro.price}</td>
-                <td className="px-6 py-4 flex justify-center items-center gap-4">
+                <td className="px-4">
+                  <Link to={`/admin/detail-product/${pro.id}`}>
+                    <img
+                      className="w-16 h-16 rounded-full object-contain"
+                      src={pro.image}
+                      alt={pro.title}
+                    />
+                  </Link>
+                </td>
+                <td>
+                  <Link to={`/admin/detail-product/${pro.id}`}>
+                    {pro.title}
+                  </Link>
+                </td>
+                <td>{pro.category}</td>
+                <td>{pro.price}</td>
+                <td>{renderStars(pro.rating)}</td>
+                <td className="px-6 py-8 flex justify-center items-center gap-4">
                   <Link
                     to={`/admin/edit-product/${pro.id}`}
                     className="font-bold rounded-xl shadow-lg px-5 py-1 hover:scale-110 duration-300 text-white bg-blue-600 hover:underline"
