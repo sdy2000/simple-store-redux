@@ -21,7 +21,7 @@ function AddProduct() {
     console.log(login);
   };
   return (
-    <div className="container">
+    <div className="container py-20">
       <form
         className="w-full flex flex-col justify-start gap-6"
         onSubmit={handleFormSubmit}
@@ -48,7 +48,7 @@ function AddProduct() {
             </label>
           </div>
           <textarea
-            className="accounting-input-div "
+            className="accounting-input-div p-3 max-h-96 min-h-[10rem] h-20"
             type={"text"}
             name={"description"}
             id={"description"}
@@ -77,7 +77,7 @@ function AddProduct() {
         <input
           className="bg-primary-700 text-white rounded-lg py-3 text-lg font-semibold mb-6 hover:bg-primary-900 duration-300"
           type="submit"
-          value="Log In"
+          value="Add Product"
         />
       </form>
     </div>
